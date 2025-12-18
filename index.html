@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jewelry Box - Handmade & Vintage Jewelry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2a2a2a;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #2a2a2a;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        nav a {
+            color: #2a2a2a;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #999;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto 6rem auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: #2a2a2a;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Collection Sections */
+        .collection-section {
+            margin-bottom: 6rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2a2a2a;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .gallery-caption {
+            padding: 0 1rem;
+        }
+
+        .gallery-caption h4 {
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #2a2a2a;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            color: #999;
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Story Section */
+        .story {
+            max-width: 800px;
+            margin: 0 auto 6rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .story h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            color: #2a2a2a;
+        }
+
+        .story p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        /* Info Boxes */
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .info-box {
+            text-align: center;
+            padding: 3rem 2rem;
+            border: 1px solid #e8e8e8;
+        }
+
+        .info-box h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: #2a2a2a;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .info-box .note {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #999;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .contact h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: #2a2a2a;
+        }
+
+        .contact p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .contact a {
+            color: #2a2a2a;
+            text-decoration: none;
+            border-bottom: 1px solid #2a2a2a;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact a:hover {
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid #e8e8e8;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #999;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Jewelry Box</h1>
+        <p class="tagline">Handmade & Vintage Treasures</p>
+    </header>
+
+    <nav>
+        <a href="#handcrafted">Handcrafted</a>
+        <a href="#vintage">Vintage</a>
+        <a href="#story">Our Story</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Three Generations of Excellence</h2>
+        <p>Welcome to The Jewelry Box, where quality and beauty have been a family tradition since the 1920s. Every piece in our collection is selected with care, passion, and decades of expertise.</p>
+    </div>
+
+    <div class="container">
+        <!-- Gallery Section -->
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800" alt="Handmade Jewelry">
+                <div class="gallery-caption">
+                    <h4>Delicate Designs</h4>
+                    <p>14k Gold & Sterling Silver</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800" alt="Vintage Jewelry">
+                <div class="gallery-caption">
+                    <h4>Vintage Collection</h4>
+                    <p>Curated Antique Pieces</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800" alt="Fine Jewelry">
+                <div class="gallery-caption">
+                    <h4>Fine Jewelry</h4>
+                    <p>Diamonds & Precious Stones</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800" alt="Custom Pieces">
+                <div class="gallery-caption">
+                    <h4>Custom Work</h4>
+                    <p>Bespoke Creations</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800" alt="Rings">
+                <div class="gallery-caption">
+                    <h4>Statement Rings</h4>
+                    <p>Vintage & Modern Styles</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=800" alt="Necklaces">
+                <div class="gallery-caption">
+                    <h4>Elegant Necklaces</h4>
+                    <p>Layering Pieces</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story" class="story">
+            <h3>Our Family History</h3>
+            
+            <p>Our history begins with George Chiappa, the son of Italian immigrants from Lake Como, Italy. Born and raised in New York in the 1920s, he made his mark in the jewelry and watch trade. When his firstborn daughter, Theresa Chiappa, showed interest in the trade, he was excited to pass along his knowledge and worked with her for the decades they had together until his passing in 1984.</p>
+            
+            <p>Theresa has since taken the torch and carried on the family legacy of quality and beauty. Her beautiful store in the hills of New Jersey has been a gem in the community for 40 years.</p>
+            
+            <p>When I was just 12, my aunt introduced me to her world. Throughout my teens, she trained me just as her father had trained her, and in my 20s, I moved from my home in Boulder, Colorado to be nearer to her and began getting involved in other aspects of the trade, working with antiques as well as diamonds and fine jewelry, honing my skills as a jeweler.</p>
+            
+            <p>Together, we have taken our boutique shoppe online! We hope to share our love of beautiful jewelry with you, and strive to provide superior customer service with pieces we can proudly stand behind.</p>
+        </section>
+
+        <!-- Collection Info Boxes -->
+        <section id="handcrafted" class="info-boxes">
+            <div class="info-box">
+                <h4>Handcrafted Jewelry</h4>
+                <p>Our beautifully crafted pieces feature semi-precious stones, precious stones and diamonds, as well as Swarovski crystal. We work with sterling silver, 14k gold filled, 14k, 18k, and platinum.</p>
+                <p>All of our handmade pieces are lovingly made locally right here in the USA.</p>
+            </div>
+
+            <div id="vintage" class="info-box">
+                <h4>Vintage Collection</h4>
+                <p>Our curated vintage collection has been hand-picked and vetted by us personally, reflecting our eclectic, boho-chic-meets-classic-elegance style.</p>
+                <p>We hope to find these vintage treasures good homes with someone who loves them as much as we do!</p>
+                <p class="note">Please note that vintage and antique pieces might naturally show some wear due to their age.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h3>Get In Touch</h3>
+            <p>We would love to hear from you! Whether you're looking for a specific piece, have questions about our collection, or want to share your thoughts, please reach out.</p>
+            <p>Email us at <a href="mailto:contact@thejewelrybox.com">contact@thejewelrybox.com</a></p>
+            <p>We love to hear feedback! Please let us know what you think!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 The Jewelry Box • Handmade & Vintage Jewelry • Three Generations of Excellence</p>
+    </footer>
+</body>
+</html>
