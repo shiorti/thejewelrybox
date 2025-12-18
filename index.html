@@ -73,25 +73,63 @@
             padding: 4rem 2rem;
         }
 
-        .hero {
+      .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 6rem;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-image: url('images/IMG_8429.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: brightness(1.3) blur(2px);
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
             text-align: center;
-            padding: 5rem 2rem;
+            padding: 2rem;
             max-width: 800px;
-            margin: 0 auto 6rem auto;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 2rem;
             color: #2a2a2a;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
         }
 
         .hero p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
             font-weight: 300;
             margin-bottom: 1.5rem;
         }
@@ -253,8 +291,17 @@
                 letter-spacing: 2px;
             }
 
-            .hero h2 {
-                font-size: 1.8rem;
+                  .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .hero-background {
+                background-attachment: scroll;
             }
 
             nav a {
@@ -290,9 +337,13 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="hero">
-        <h2>Three Generations of Excellence</h2>
-        <p>Welcome to The Jewelry Box, where quality and beauty have been a family tradition since the 1920s. Every piece in our collection is selected with care, passion, and decades of expertise.</p>
+     <div class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Three Generations of Excellence</h2>
+            <p>Welcome to The Jewelry Box, where quality and beauty have been a family tradition since the 1920s. Every piece in our collection is selected with care, passion, and decades of expertise.</p>
+        </div>
     </div>
 
     <div class="container">
